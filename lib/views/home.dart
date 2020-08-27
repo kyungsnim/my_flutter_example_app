@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:my_flutter_example_app/views/google_maps.dart';
 import 'package:my_flutter_example_app/views/regist_profile.dart';
+import 'package:my_flutter_example_app/views/use_credit_card.dart';
 import 'package:my_flutter_example_app/views/use_lottie.dart';
 import 'package:my_flutter_example_app/widgets/widgets.dart';
 
@@ -41,7 +43,20 @@ class _HomeState extends State<Home> {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => UseLottie()));
               }, child: boxButtonWidget(context, 'Lottie로 움직이는 이미지 사용')),
             ),
-
+            Container(
+              margin: EdgeInsets.only(top: 10),
+              alignment: Alignment.center,
+              child: InkWell(onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => GoogleMaps()));
+              }, child: boxButtonWidget(context, 'Google 지도 불러오기')),
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 10),
+              alignment: Alignment.center,
+              child: InkWell(onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => UseCreditCard()));
+              }, child: boxButtonWidget(context, '결제 카드 추가하기')),
+            ),
           ],
         )
       )
